@@ -1,0 +1,7 @@
+{
+  "name": "prifm",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
