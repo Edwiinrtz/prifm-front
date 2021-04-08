@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="danger">Egresos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let egreso of egresos">
+      
+        <ion-label>
+          <h2>{{egreso.name}}</h2> <p>{{egreso.description}}</p>
+        </ion-label>
+        <ion-card-subtitle id="value" color="danger">{{egreso.value}}</ion-card-subtitle>
+    </ion-item>
+  </ion-list>
+
+  <section id="totalgastos" color="danger">
+    <strong>TOTALGASTOS {{totalgastos}}</strong>
+  </section>
+</ion-content>

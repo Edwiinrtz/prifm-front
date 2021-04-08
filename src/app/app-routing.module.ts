@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'egresos',
+    loadChildren: () => import('./egresos/egresos.module').then( m => m.EgresosPageModule)
+  },
+  {
+    path: 'ingresos',
+    loadChildren: () => import('./ingresos/ingresos.module').then( m => m.IngresosPageModule)
+  },
+  {
+    path: 'adding',
+    loadChildren: () => import('./adding/adding.module').then( m => m.AddingPageModule)
+  },
 ];
 
 @NgModule({

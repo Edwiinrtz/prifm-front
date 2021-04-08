@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>adding</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" (click)="dismiss()"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #form ="ngForm" (ngSubmit)="newMov(form)" span="start">
+    <ion-item>
+      <ion-label for="nombre">Name:</ion-label>
+      <ion-input type="text" [(ngModel)]="informacion.name" name="name" ngControl="name"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label for="desc">Description:</ion-label>
+      <ion-textarea [(ngModel)]="informacion.description" ngControl="description" name="description" ></ion-textarea>
+    </ion-item>
+      
+    <ion-item>
+      <ion-label>Value</ion-label>
+      <ion-input [(ngModel)]="informacion.value" ngControl="value" name="value" min=50 type="number"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Type</ion-label>
+      <ion-select [(ngModel)]="informacion.type" name="type">
+        <ion-select-option value=0>Gasto</ion-select-option>
+        <ion-select-option value=1>Ingreso</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button type="submit" [routerLink]="['/home']" block color="primary">Guardar</ion-button>  
+  </form>
+  
+
+</ion-content>
