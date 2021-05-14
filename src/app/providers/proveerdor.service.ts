@@ -8,16 +8,16 @@ export class ProveerdorService {
 
   constructor(private http:HttpClient ) { }
 
-  obtenerEgresos=()=> { return this.http.post('http://localhost:8001/query',{
+  obtenerEgresos=()=> { return this.http.post('https://fast-oasis-68097.herokuapp.com/query',{
     type:0
   })}
-  obtenerIngresos=()=> { return this.http.post('http://localhost:8001/query',{
+  obtenerIngresos=()=> { return this.http.post('https://fast-oasis-68097.herokuapp.com/query',{
     type:1
   })}
 
   crearMovimiento(info){
     console.log("HELOW")
-    this.http.post("http://localhost:8001/new",
+    this.http.post("https://fast-oasis-68097.herokuapp.com/new",
     info).subscribe(
       (data) =>{console.log(data);return data;}
     )
